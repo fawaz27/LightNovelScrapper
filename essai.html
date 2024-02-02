@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Plus</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+        }
+        a {
+            text-decoration: none;
+            color: #333;
+        }
+        ul {
+            list-style: none;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            background-color: #007bff;
+            color: #fff;
+            padding: 20px;
+        }
+        header ul {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header li {
+            margin: 0 10px;
+        }
+        main {
+            margin: 20px 0;
+        }
+        .novels {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .novel {
+            width: 25%;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease-in-out;
+        }
+        .novel:hover {
+            transform: translateY(-5px);
+        }
+        .novel h2 {
+            margin-bottom: 10px;
+        }
+        .novel p {
+            margin-bottom: 10px;
+        }
+        .novel a {
+            display: block;
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <ul>
+                <li><a href="#">Library</a></li>
+                <li><a href="#">Explore</a></li>
+                <li><a href="#">Profile</a></li>
+            </ul>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <h1>Light Novels</h1>
+            <div class="novels">
+                <div class="novel">
+                    <h2>Titre 1</h2>
+                    <p>Auteur 1</p>
+                    <p>Description 1</p>
+                    <a href="#">Lire maintenant</a>
+                </div>
+                <div class="novel">
+                    <h2>Titre 2</h2>
+                    <p>Auteur 2</p>
+                    <p>Description 2</p>
+                    <a href="#">Lire maintenant</a>
+                </div>
+                <div class="novel">
+                    <h2>Titre 3</h2>
+                    <p>Auteur 3</p>
+                    <p>Description 3</p>
+                    <a href="#">Lire maintenant</a>
+                </div>
+                <div class="novel">
+                  <h2>Titre 1</h2>
+                  <p>Auteur 1</p>
+                  <p>Description 1</p>
+                  <a href="#">Lire maintenant</a>
+              </div>
+              <div class="novel">
+                  <h2>Titre 2</h2>
+                  <p>Auteur 2</p>
+                  <p>Description 2</p>
+                  <a href="#">Lire maintenant</a>
+              </div>
+              <div class="novel">
+                  <h2>Titre 3</h2>
+                  <p>Auteur 3</p>
+                  <p>Description 3</p>
+                  <a href="#">Lire maintenant</a>
+              </div>
+              <div class="novel">
+                <h2>Titre 1</h2>
+                <p>Auteur 1</p>
+                <p>Description 1</p>
+                <a href="#">Lire maintenant</a>
+            </div>
+            <div class="novel">
+                <h2>Titre 2</h2>
+                <p>Auteur 2</p>
+                <p>Description 2</p>
+                <a href="#">Lire maintenant</a>
+            </div>
+            <div class="novel">
+                <h2>Titre 3</h2>
+                <p>Auteur 3</p>
+                <p>Description 3</p>
+                <a href="#">Lire maintenant</a>
+            </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
