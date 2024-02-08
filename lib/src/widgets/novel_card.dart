@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lnscraper/src/entity/novel.dart';
+import 'package:lnscraper/src/model/novel.dart';
 
 class NovelCard extends StatelessWidget {
   final Novel novel;
@@ -10,27 +10,34 @@ class NovelCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       elevation: 3.0,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          SizedBox(
-            height: 240,
-            width: double.infinity,
-            child: Image.asset(
-              novel.imageUrl,
-              fit: BoxFit.fill,
-              
-            ),
-          ),
-          // Text(
-          //   novel.name,
-          //   style: TextStyle(
-          //     fontSize: 18.0,
-          //     fontWeight: FontWeight.bold,
-          //   ),
-          // ),
-        ],
-      ),
+      child: Stack(fit: StackFit.expand, children: [
+        Image.asset(
+          novel.coverImage,
+          fit: BoxFit.fill,
+        ),
+        Column(
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: [
+            Container(
+              color: const Color(0xAA434343),
+              padding: const EdgeInsets.all(8),
+              child: Row(
+                children: [
+                  Expanded(
+                    child: Text(
+                      novel.name,
+                      style: const TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          overflow: TextOverflow.ellipsis),
+                    ),
+                  )
+                ],
+              ),
+            )
+          ],
+        ),
+      ]),
     );
   }
 }

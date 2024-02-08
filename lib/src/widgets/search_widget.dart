@@ -19,12 +19,12 @@ class SearchWidget extends StatelessWidget {
               child: TextField(
                 decoration: InputDecoration(
                   hintText: 'Search...',
-                  border: const OutlineInputBorder(),
+                  border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(20),
+                      ),
                   suffixIcon: IconButton(
                     icon: const Icon(Icons.search),
-                    onPressed: () {
-                      
-                    },
+                    onPressed: () {},
                   ),
                   prefixIcon: IconButton(
                     icon: const Icon(Icons.arrow_back),

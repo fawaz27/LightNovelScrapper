@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:lnscraper/src/screens/novel.dart';
 import 'package:lnscraper/src/utils/screen_sizes.dart';
 import 'package:lnscraper/src/widgets/search_widget.dart';
-import 'package:lnscraper/src/entity/novel.dart';
+import 'package:lnscraper/src/model/novel.dart';
 import 'package:lnscraper/src/widgets/novel_card.dart';
 
 class LibraryScreen extends StatefulWidget {
@@ -16,30 +17,74 @@ class _LibraryScreenState extends State<LibraryScreen> {
   List<Novel> novels = [
     Novel(
         name: 'Novel 1',
-        imageUrl: 'assets/images/310s.jpg',
-        unreadChapters: 10),
-    Novel(
-        name: 'Novel 2', imageUrl: 'assets/images/359s.jpg', unreadChapters: 5),
-    Novel(
-        name: 'Novel 2', imageUrl: 'assets/images/373s.jpg', unreadChapters: 5),
-    Novel(
-        name: 'Novel 2', imageUrl: 'assets/images/447s.jpg', unreadChapters: 5),
-    Novel(
-        name: 'Novel 2', imageUrl: 'assets/images/466s.jpg', unreadChapters: 5),
-    Novel(
-        name: 'Novel 2', imageUrl: 'assets/images/580s.jpg', unreadChapters: 5),
-    Novel(
-        name: 'Novel 2', imageUrl: 'assets/images/780s.jpg', unreadChapters: 5),
-    Novel(
-        name: 'Novel 2', imageUrl: 'assets/images/871s.jpg', unreadChapters: 5),
+        coverImage: 'assets/images/310s.jpg',
+        author: 'None',
+        description: '',
+        status: '',
+        source: ''),
     Novel(
         name: 'Novel 2',
-        imageUrl: 'assets/images/1303s.jpg',
-        unreadChapters: 5),
+        coverImage: 'assets/images/359s.jpg',
+        author: 'None',
+        description: '',
+        status: '',
+        source: ''),
     Novel(
         name: 'Novel 2',
-        imageUrl: 'assets/images/1421s.jpg',
-        unreadChapters: 5),
+        coverImage: 'assets/images/373s.jpg',
+        author: 'None',
+        description: '',
+        status: '',
+        source: ''),
+    Novel(
+        name: 'Novel 2',
+        coverImage: 'assets/images/447s.jpg',
+        author: 'None',
+        description: '',
+        status: '',
+        source: ''),
+    Novel(
+        name: 'Novel 2',
+        coverImage: 'assets/images/466s.jpg',
+        author: 'None',
+        description: '',
+        status: '',
+        source: ''),
+    Novel(
+        name: 'Novel 2',
+        coverImage: 'assets/images/580s.jpg',
+        author: 'None',
+        description: '',
+        status: '',
+        source: ''),
+    Novel(
+        name: 'Novel 2',
+        coverImage: 'assets/images/780s.jpg',
+        author: 'None',
+        description: '',
+        status: '',
+        source: ''),
+    Novel(
+        name: 'Novel 2',
+        coverImage: 'assets/images/871s.jpg',
+        author: 'None',
+        description: '',
+        status: '',
+        source: ''),
+    Novel(
+        name: 'Novel 2',
+        coverImage: 'assets/images/1303s.jpg',
+        author: 'None',
+        description: '',
+        status: '',
+        source: ''),
+    Novel(
+        name: 'Novel 2',
+        coverImage: 'assets/images/1421s.jpg',
+        author: 'None',
+        description: '',
+        status: '',
+        source: ''),
     // Ajoutez d'autres novels ici
   ];
   void toggleSearchVisibility(bool visibility) {
@@ -106,19 +151,22 @@ class _LibraryScreenState extends State<LibraryScreen> {
               const SizedBox(height: 15),
               Expanded(
                 child: GridView.builder(
-
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: ScreenSizes.isDesktop(context)
-                        ? 8
-                        : (ScreenSizes.isTablet(context) ? 4 : 2),
-                    crossAxisSpacing: 10.0,
-                    mainAxisSpacing: 15.0,
-                    // childAspectRatio: ScreenSizes.getGridItemAspectRatio(context),
-                    mainAxisExtent: 270
-                  ),
+                      crossAxisCount: ScreenSizes.isDesktop(context)
+                          ? 7
+                          : (ScreenSizes.isTablet(context) ? 4 : 2),
+                      crossAxisSpacing: 10.0,
+                      mainAxisSpacing: 15.0,
+                      // childAspectRatio: ScreenSizes.getGridItemAspectRatio(context),
+                      mainAxisExtent: 270),
                   itemCount: novels.length,
                   itemBuilder: (BuildContext context, int index) {
-                    return (NovelCard(novel: novels[index]));
+                    return GestureDetector(
+                        onTap: (() => Navigator.of(context).push(
+                            MaterialPageRoute(
+                                builder: ((context) =>
+                                    NovelScreen(novel: novels[index]))))),
+                        child: NovelCard(novel: novels[index]));
                   },
                 ),
               ),
