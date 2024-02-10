@@ -5,6 +5,7 @@ class Novel {
   final String description;
   final String status;
   final String source;
+  final List<String> chapters;
   Novel({
     required this.name,
     required this.coverImage,
@@ -12,5 +13,6 @@ class Novel {
     required this.description,
     required this.status,
     required this.source,
+    required this.chapters,
   });
 }

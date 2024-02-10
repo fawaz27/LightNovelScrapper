@@ -1,18 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:lnscraper/src/model/novel.dart';
-
+import 'dart:io';
 class NovelCard extends StatelessWidget {
   final Novel novel;
 
   const NovelCard({super.key, required this.novel});
-
   @override
   Widget build(BuildContext context) {
     return Card(
       elevation: 3.0,
       child: Stack(fit: StackFit.expand, children: [
-        Image.asset(
-          novel.coverImage,
+        Image.file(
+          File(novel.coverImage),
           fit: BoxFit.fill,
         ),
         Column(

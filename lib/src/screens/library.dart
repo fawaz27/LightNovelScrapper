@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:lnscraper/src/screens/novel.dart';
+import 'dart:io';
+import 'dart:convert';
+import 'package:lnscraper/src/screens/novel_info.dart';
 import 'package:lnscraper/src/utils/screen_sizes.dart';
 import 'package:lnscraper/src/widgets/search_widget.dart';
 import 'package:lnscraper/src/model/novel.dart';
 import 'package:lnscraper/src/widgets/novel_card.dart';
+import 'package:path/path.dart';
 
 class LibraryScreen extends StatefulWidget {
   const LibraryScreen({Key? key}) : super(key: key);
@@ -14,83 +17,78 @@ class LibraryScreen extends StatefulWidget {
 
 class _LibraryScreenState extends State<LibraryScreen> {
   bool _isSearchInputVisible = false;
-  List<Novel> novels = [
-    Novel(
-        name: 'Novel 1',
-        coverImage: 'assets/images/310s.jpg',
-        author: 'None',
-        description: '',
-        status: '',
-        source: ''),
-    Novel(
-        name: 'Novel 2',
-        coverImage: 'assets/images/359s.jpg',
-        author: 'None',
-        description: '',
-        status: '',
-        source: ''),
-    Novel(
-        name: 'Novel 2',
-        coverImage: 'assets/images/373s.jpg',
-        author: 'None',
-        description: '',
-        status: '',
-        source: ''),
-    Novel(
-        name: 'Novel 2',
-        coverImage: 'assets/images/447s.jpg',
-        author: 'None',
-        description: '',
-        status: '',
-        source: ''),
-    Novel(
-        name: 'Novel 2',
-        coverImage: 'assets/images/466s.jpg',
-        author: 'None',
-        description: '',
-        status: '',
-        source: ''),
-    Novel(
-        name: 'Novel 2',
-        coverImage: 'assets/images/580s.jpg',
-        author: 'None',
-        description: '',
-        status: '',
-        source: ''),
-    Novel(
-        name: 'Novel 2',
-        coverImage: 'assets/images/780s.jpg',
-        author: 'None',
-        description: '',
-        status: '',
-        source: ''),
-    Novel(
-        name: 'Novel 2',
-        coverImage: 'assets/images/871s.jpg',
-        author: 'None',
-        description: '',
-        status: '',
-        source: ''),
-    Novel(
-        name: 'Novel 2',
-        coverImage: 'assets/images/1303s.jpg',
-        author: 'None',
-        description: '',
-        status: '',
-        source: ''),
-    Novel(
-        name: 'Novel 2',
-        coverImage: 'assets/images/1421s.jpg',
-        author: 'None',
-        description: '',
-        status: '',
-        source: ''),
-    // Ajoutez d'autres novels ici
-  ];
+  List<Novel> novels = [];
+
   void toggleSearchVisibility(bool visibility) {
     setState(() {
       _isSearchInputVisible = visibility;
     });
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    _loadNovels('download');
+  }
+
+  Future<void> _loadNovels(String directoryPath) async {
+    // Chemin du répertoire contenant les romans
+    Directory novelsDirectory = Directory(directoryPath);
+
+    if (await novelsDirectory.exists()) {
+      List<Novel> loadedNovels = [];
+      List<FileSystemEntity> sourceDirectories =
+          await novelsDirectory.list().toList();
+      for (FileSystemEntity sourceDirectory in sourceDirectories) {
+        if (sourceDirectory is Directory) {
+          List<FileSystemEntity> novelDirectories =
+              await sourceDirectory.list().toList();
+          for (FileSystemEntity novelDirectory in novelDirectories) {
+            if (novelDirectory is Directory) {
+              File metadataFile = File('${novelDirectory.path}/metadata.json');
+              if (await metadataFile.exists()) {
+                String metadataJson = await metadataFile.readAsString();
+                Map<String, dynamic> metadata =
+                    jsonDecode(metadataJson) as Map<String, dynamic>;
+                List<String> chapters = [];
+                Directory chapterDirectory =
+                    Directory('${novelDirectory.path}/chapters');
+                if (await chapterDirectory.exists()) {
+                  List<FileSystemEntity> chapterFiles =
+                      await chapterDirectory.list().toList();
+                  for (FileSystemEntity chapterFile in chapterFiles) {
+                    if (chapterFile is File) {
+                      chapters.add(basenameWithoutExtension(chapterFile.path));
+                    }
+                  }
+                }
+                loadedNovels.add(Novel(
+                  name: metadata['name'],
+                  coverImage: '${novelDirectory.path}/cover.jpg',
+                  author: metadata['author'],
+                  description: metadata['description'],
+                  status: metadata['status'],
+                  source: metadata['source'],
+                  chapters:
+                      chapters.isEmpty ? ['No chapters available'] : chapters,
+                ));
+              }
+            }
+          }
+        }
+      }
+
+      setState(() {
+        novels = loadedNovels;
+      });
+    }
+  }
+
+  void reloadNovels() {
+    setState(() {
+      novels = [];
+    });
+    _loadNovels('download');
   }
 
   @override
@@ -129,6 +127,10 @@ class _LibraryScreenState extends State<LibraryScreen> {
                             toggleSearchVisibility(false);
                           },
                         ),
+                        IconButton(
+                          icon: const Icon(Icons.refresh),
+                          onPressed: reloadNovels,
+                        ),
                       ]
                     : [
                         SizedBox(
@@ -145,6 +147,10 @@ class _LibraryScreenState extends State<LibraryScreen> {
                         IconButton(
                           icon: const Icon(Icons.filter_list),
                           onPressed: () {},
+                        ),
+                        IconButton(
+                          icon: const Icon(Icons.refresh),
+                          onPressed: reloadNovels,
                         ),
                       ],
               ),
@@ -165,7 +171,7 @@ class _LibraryScreenState extends State<LibraryScreen> {
                         onTap: (() => Navigator.of(context).push(
                             MaterialPageRoute(
                                 builder: ((context) =>
-                                    NovelScreen(novel: novels[index]))))),
+                                    NovelInfoScreen(novel: novels[index]))))),
                         child: NovelCard(novel: novels[index]));
                   },
                 ),
