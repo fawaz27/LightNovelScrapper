@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lnscraper/src/model/chapter.dart';
 import 'dart:io';
 import 'dart:convert';
 import 'package:lnscraper/src/screens/novel_info.dart';
@@ -7,6 +8,9 @@ import 'package:lnscraper/src/widgets/search_widget.dart';
 import 'package:lnscraper/src/model/novel.dart';
 import 'package:lnscraper/src/widgets/novel_card.dart';
 import 'package:path/path.dart';
+int compareChapters(Chapter a, Chapter b) {
+  return a.title.compareTo(b.title);
+}
 
 class LibraryScreen extends StatefulWidget {
   const LibraryScreen({Key? key}) : super(key: key);
@@ -50,17 +54,27 @@ class _LibraryScreenState extends State<LibraryScreen> {
                 String metadataJson = await metadataFile.readAsString();
                 Map<String, dynamic> metadata =
                     jsonDecode(metadataJson) as Map<String, dynamic>;
-                List<String> chapters = [];
+
+                // Charger les chapitres du roman
+                List<Chapter> chapters = [];
+
+                // Vérifier si le répertoire des chapitres existe
                 Directory chapterDirectory =
                     Directory('${novelDirectory.path}/chapters');
                 if (await chapterDirectory.exists()) {
+                  // Liste des fichiers de chapitre
                   List<FileSystemEntity> chapterFiles =
                       await chapterDirectory.list().toList();
                   for (FileSystemEntity chapterFile in chapterFiles) {
                     if (chapterFile is File) {
-                      chapters.add(basenameWithoutExtension(chapterFile.path));
+                      String chapterContent = await chapterFile.readAsString();
+                      chapters.add(Chapter(
+                        title: basenameWithoutExtension(chapterFile.path), // Utilisez le nom du fichier comme titre du chapitre
+                        content: chapterContent,
+                      ));
                     }
                   }
+                  chapters.sort(compareChapters);
                 }
                 loadedNovels.add(Novel(
                   name: metadata['name'],
@@ -69,8 +83,7 @@ class _LibraryScreenState extends State<LibraryScreen> {
                   description: metadata['description'],
                   status: metadata['status'],
                   source: metadata['source'],
-                  chapters:
-                      chapters.isEmpty ? ['No chapters available'] : chapters,
+                  chapters: chapters,
                 ));
               }
             }
