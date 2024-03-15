@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:lnscraper/src/screens/library.dart';
-import 'package:lnscraper/src/screens/explore.dart';
-import 'package:lnscraper/src/screens/history.dart';
-import 'package:lnscraper/src/screens/settings.dart';
+import 'package:lnscraper/src/views/library.dart';
+import 'package:lnscraper/src/views/explore.dart';
+import 'package:lnscraper/src/views/history.dart';
+import 'package:lnscraper/src/views/settings.dart';
 import 'package:lnscraper/src/utils/screen_sizes.dart';
 
 class MyApp extends StatelessWidget {
@@ -31,7 +31,7 @@ class MainAppScreen extends StatefulWidget {
 class _MainAppScreenState extends State<MainAppScreen> {
   final List<Map<String, dynamic>> _navigationItems = [
     {
-      'screen': LibraryScreen(),
+      'screen': const LibraryScreen(),
       'item': const BottomNavigationBarItem(
         icon: Icon(Icons.library_books),
         label: 'Library',

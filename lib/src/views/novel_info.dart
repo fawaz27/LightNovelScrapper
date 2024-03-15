@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:lnscraper/src/model/novel.dart';
-import 'package:lnscraper/src/screens/reader.dart';
+import 'package:lnscraper/src/models/novel.dart';
+import 'package:lnscraper/src/views/reader.dart';
 import 'dart:io';
 import 'package:lnscraper/src/utils/screen_sizes.dart';
 import 'package:readmore/readmore.dart';
@@ -138,7 +138,6 @@ class NovelInfoScreen extends StatelessWidget {
                               const Divider(
                                 thickness: 1,
                               )
-                              // chapters.isEmpty ? ['No chapters available'] :
                             ],
                           ),
                         );

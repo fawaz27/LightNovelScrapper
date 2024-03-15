@@ -1,4 +1,4 @@
-import 'package:lnscraper/src/model/chapter.dart';
+import 'package:lnscraper/src/models/chapter.dart';
 
 class Novel {
   final String name;

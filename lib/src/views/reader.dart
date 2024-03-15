@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lnscraper/src/model/chapter.dart';
+import 'package:lnscraper/src/models/chapter.dart';
 
 class ReaderScreen extends StatelessWidget {
   const ReaderScreen({Key? key, required this.chapter}) : super(key: key);
