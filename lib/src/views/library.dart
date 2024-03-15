@@ -31,7 +31,6 @@ class _LibraryScreenState extends State<LibraryScreen> {
   @override
   void initState() {
     super.initState();
-    // Provider.of<LibraryViewModel>(context).loadNovels('download');
   }
 
   void reloadNovels() {
@@ -76,10 +75,7 @@ class _LibraryScreenState extends State<LibraryScreen> {
                               toggleSearchVisibility(false);
                             },
                           ),
-                          IconButton(
-                            icon: const Icon(Icons.refresh),
-                            onPressed: reloadNovels,
-                          ),
+                          ReloadButton()
                         ]
                       : [
                           SizedBox(
@@ -97,10 +93,7 @@ class _LibraryScreenState extends State<LibraryScreen> {
                             icon: const Icon(Icons.filter_list),
                             onPressed: () {},
                           ),
-                          IconButton(
-                            icon: const Icon(Icons.refresh),
-                            onPressed: reloadNovels,
-                          ),
+                          ReloadButton()
                         ],
                 ),
                 const SizedBox(height: 15),
@@ -109,6 +102,20 @@ class _LibraryScreenState extends State<LibraryScreen> {
             ),
           ),
         )));
+  }
+}
+
+class ReloadButton extends StatelessWidget {
+  const ReloadButton({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Consumer<LibraryViewModel>(builder: (context, viewModel, child) {
+      return IconButton(
+        icon: const Icon(Icons.refresh),
+        onPressed: () => viewModel.reload(),
+      );
+    });
   }
 }
 
@@ -125,29 +132,53 @@ class LibraryList extends StatelessWidget {
           );
         } else {
           final sources = viewModel.sources;
-          final source = sources[0];
-          final novels = sources[0].novels;
-          print(source);
-          return Expanded(
-            child: GridView.builder(
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: ScreenSizes.isDesktop(context)
-                      ? 7
-                      : (ScreenSizes.isTablet(context) ? 4 : 2),
-                  crossAxisSpacing: 10.0,
-                  mainAxisSpacing: 15.0,
-                  mainAxisExtent: 270),
-              itemCount: novels.length,
-              itemBuilder: (BuildContext context, int index) {
-                return GestureDetector(
-                    onTap: (() => Navigator.of(context).push(MaterialPageRoute(
-                        builder: ((context) =>
-                            NovelInfoScreen(novel: novels[index]))))),
-                    child: NovelCard(novel: novels[index]));
-              },
-            ),
+          return ListView.builder(
+            itemCount: sources.length,
+            itemBuilder: (BuildContext context, int index) {
+              final source = sources[index];
+              final novels = source.novels;
+              return Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                    child: Text(
+                      source.name,
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  GridView.builder(
+                    shrinkWrap: true,
+                    physics: NeverScrollableScrollPhysics(),
+                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: ScreenSizes.isDesktop(context)
+                          ? 7
+                          : (ScreenSizes.isTablet(context) ? 4 : 2),
+                      crossAxisSpacing: 10.0,
+                      mainAxisSpacing: 15.0,
+                      mainAxisExtent: 270,
+                    ),
+                    itemCount: novels.length,
+                    itemBuilder: (BuildContext context, int index) {
+                      return GestureDetector(
+                        onTap: (() => Navigator.of(context).push(
+                            MaterialPageRoute(
+                                builder: ((context) =>
+                                    NovelInfoScreen(novel: novels[index]))))),
+                        child: NovelCard(novel: novels[index]),
+                      );
+                    },
+                  ),
+                ],
+              );
+            },
           );
-        
         }
       },
     );

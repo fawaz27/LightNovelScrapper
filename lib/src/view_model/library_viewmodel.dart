@@ -94,6 +94,12 @@ class LibraryViewModel extends ChangeNotifier {
     }
   }
 
+  void reload(){
+    print('salut');
+    _sources = [];
+    loadNovels();
+  }
+
   void addNovel() {}
   void removeNovel() {}
 }
