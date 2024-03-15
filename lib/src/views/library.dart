@@ -1,15 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:lnscraper/src/models/chapter.dart';
-import 'package:lnscraper/src/utils/filter.dart';
 import 'package:lnscraper/src/view_model/library_viewmodel.dart';
-import 'dart:io';
-import 'dart:convert';
 import 'package:lnscraper/src/views/novel_info.dart';
 import 'package:lnscraper/src/utils/screen_sizes.dart';
 import 'package:lnscraper/src/widgets/search_widget.dart';
-import 'package:lnscraper/src/models/novel.dart';
 import 'package:lnscraper/src/widgets/novel_card.dart';
-import 'package:path/path.dart';
 import 'package:provider/provider.dart';
 
 class LibraryScreen extends StatefulWidget {
@@ -31,10 +25,6 @@ class _LibraryScreenState extends State<LibraryScreen> {
   @override
   void initState() {
     super.initState();
-  }
-
-  void reloadNovels() {
-    setState(() {});
   }
 
   @override
@@ -131,7 +121,7 @@ class LibraryList extends StatelessWidget {
             child: CircularProgressIndicator(),
           );
         } else {
-          final sources = viewModel.sources;
+          final sources = viewModel.filteredSources.length == 0 ? viewModel.sources:viewModel.filteredSources ;
           return ListView.builder(
             itemCount: sources.length,
             itemBuilder: (BuildContext context, int index) {
@@ -149,6 +139,10 @@ class LibraryList extends StatelessWidget {
                         fontWeight: FontWeight.bold,
                       ),
                     ),
+                  ),
+                  const Divider(
+                    thickness: 1,
+                    color: Colors.black,
                   ),
                   SizedBox(
                     height: 10,

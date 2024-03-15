@@ -16,6 +16,10 @@ class LibraryViewModel extends ChangeNotifier {
   List<Source> get sources => _sources;
   bool get isLoading => _isLoading;
 
+  List<Source> _filteredSources = [];
+
+  List<Source> get filteredSources => _filteredSources;
+
   Future<void> loadNovels() async {
     try {
       // Chemin du répertoire contenant les romans
@@ -85,7 +89,7 @@ class LibraryViewModel extends ChangeNotifier {
 
         _sources = loadedSources;
         _isLoading = false;
-  
+
         notifyListeners();
       }
     } catch (e) {
@@ -94,10 +98,27 @@ class LibraryViewModel extends ChangeNotifier {
     }
   }
 
-  void reload(){
-    print('salut');
+  void reload() {
     _sources = [];
+    _filteredSources = [];
     loadNovels();
+  }
+
+  void filterNovel(String query) {
+    List<Source> results = [];
+    results = sources
+        .map((source) => Source(
+              name: source.name,
+              url: source.url,
+              novels: source.novels
+                  .where((novel) =>
+                      novel.name.toLowerCase().contains(query.toLowerCase()))
+                  .toList(),
+            ))
+        .toList();
+
+    _filteredSources = results;
+    notifyListeners();
   }
 
   void addNovel() {}
