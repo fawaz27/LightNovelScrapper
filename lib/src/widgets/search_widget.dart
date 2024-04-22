@@ -25,10 +25,7 @@ class SearchWidget extends StatelessWidget {
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(20),
                     ),
-                    suffixIcon: IconButton(
-                      icon: const Icon(Icons.search),
-                      onPressed: () {},
-                    ),
+                    suffixIcon: const Icon(Icons.search),
                     prefixIcon: IconButton(
                       icon: const Icon(Icons.arrow_back),
                       onPressed: () {

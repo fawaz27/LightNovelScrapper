@@ -46,7 +46,6 @@ class LibraryViewModel extends ChangeNotifier {
                   Map<String, dynamic> metadata =
                       jsonDecode(metadataJson) as Map<String, dynamic>;
                   List<Chapter> chapters = [];
-
                   // Vérifier si le répertoire des chapitres existe
                   Directory chapterDirectory =
                       Directory('${novelDirectory.path}/chapters');

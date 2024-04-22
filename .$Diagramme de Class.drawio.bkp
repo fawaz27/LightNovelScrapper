@@ -1,68 +1,32 @@
-<mxfile host="Electron" modified="2024-02-20T16:11:48.700Z" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/23.1.5 Chrome/120.0.6099.109 Electron/28.1.0 Safari/537.36" etag="n_X9Yz3IQ21u2kADpxgQ" version="23.1.5" type="device">
+<mxfile host="Electron" modified="2024-04-01T14:28:38.945Z" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.1.0 Chrome/120.0.6099.109 Electron/28.1.0 Safari/537.36" etag="MVpr6FclK9GUqO-GkSfM" version="24.1.0" type="device">
   <diagram name="Page-1" id="bI3U2dczb3h5Pvb8gf_k">
-    <mxGraphModel dx="876" dy="501" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1527" pageHeight="1569" math="0" shadow="0">
+    <mxGraphModel dx="1270" dy="726" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1527" pageHeight="1569" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="2ZDiNAuSC-FLORGVPn16-1" value="Novel" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="660" y="100" width="190" height="160" as="geometry" />
+          <mxGeometry x="230" y="54" width="280" height="210" as="geometry" />
         </mxCell>
-        <mxCell id="2ZDiNAuSC-FLORGVPn16-2" value="- name: string&lt;br&gt;- coverImage: string&lt;br&gt;- author: string&lt;br&gt;- description: string&lt;br&gt;- status: string&lt;br&gt;- chapters: List&amp;lt;Chapter&amp;gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="2ZDiNAuSC-FLORGVPn16-1" vertex="1">
-          <mxGeometry y="26" width="190" height="94" as="geometry" />
+        <mxCell id="2ZDiNAuSC-FLORGVPn16-2" value="- name: string&lt;br&gt;- coverImage: string&lt;br&gt;- author: string&lt;br&gt;- description: string&lt;br&gt;- status: string&lt;br&gt;- chapters: List&amp;lt;Chapter&amp;gt;&lt;div&gt;- source : string&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="2ZDiNAuSC-FLORGVPn16-1" vertex="1">
+          <mxGeometry y="26" width="280" height="114" as="geometry" />
         </mxCell>
         <mxCell id="2ZDiNAuSC-FLORGVPn16-3" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="2ZDiNAuSC-FLORGVPn16-1" vertex="1">
-          <mxGeometry y="120" width="190" height="8" as="geometry" />
+          <mxGeometry y="140" width="280" height="8" as="geometry" />
         </mxCell>
-        <mxCell id="2ZDiNAuSC-FLORGVPn16-4" value="+ getTotalChapters(): int" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="2ZDiNAuSC-FLORGVPn16-1" vertex="1">
-          <mxGeometry y="128" width="190" height="32" as="geometry" />
-        </mxCell>
-        <mxCell id="2ZDiNAuSC-FLORGVPn16-5" value="Chapter" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="370" y="140" width="160" height="134" as="geometry" />
-        </mxCell>
-        <mxCell id="2ZDiNAuSC-FLORGVPn16-6" value="- name: string&lt;br&gt;- content: string&lt;br&gt;- isDowload : boolean&lt;br&gt;- updatedAt : date" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="2ZDiNAuSC-FLORGVPn16-5" vertex="1">
-          <mxGeometry y="26" width="160" height="74" as="geometry" />
-        </mxCell>
-        <mxCell id="2ZDiNAuSC-FLORGVPn16-7" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="2ZDiNAuSC-FLORGVPn16-5" vertex="1">
-          <mxGeometry y="100" width="160" height="8" as="geometry" />
-        </mxCell>
-        <mxCell id="2ZDiNAuSC-FLORGVPn16-8" value="+ (type): type" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="2ZDiNAuSC-FLORGVPn16-5" vertex="1">
-          <mxGeometry y="108" width="160" height="26" as="geometry" />
+        <mxCell id="2ZDiNAuSC-FLORGVPn16-4" value="+ getTotalChapters(): int&lt;div&gt;+ getTotalUnreadChapter(): int&lt;/div&gt;&lt;div&gt;&amp;nbsp;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="2ZDiNAuSC-FLORGVPn16-1" vertex="1">
+          <mxGeometry y="148" width="280" height="62" as="geometry" />
         </mxCell>
         <mxCell id="2ZDiNAuSC-FLORGVPn16-9" value="Library" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="360" y="340" width="240" height="190" as="geometry" />
+          <mxGeometry x="220" y="360" width="240" height="190" as="geometry" />
         </mxCell>
-        <mxCell id="2ZDiNAuSC-FLORGVPn16-10" value="- path: string&lt;br&gt;- sources: List &amp;lt;Source&amp;gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="2ZDiNAuSC-FLORGVPn16-9" vertex="1">
+        <mxCell id="2ZDiNAuSC-FLORGVPn16-10" value="- path: string&lt;br&gt;- novels: List &amp;lt;Novel&amp;gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="2ZDiNAuSC-FLORGVPn16-9" vertex="1">
           <mxGeometry y="26" width="240" height="44" as="geometry" />
         </mxCell>
         <mxCell id="2ZDiNAuSC-FLORGVPn16-11" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="2ZDiNAuSC-FLORGVPn16-9" vertex="1">
           <mxGeometry y="70" width="240" height="8" as="geometry" />
         </mxCell>
-        <mxCell id="2ZDiNAuSC-FLORGVPn16-12" value="+ Library(path:string): void&lt;div&gt;+ updatePathSource(src: string): void&lt;/div&gt;&lt;div&gt;+ loadNovels(): void&lt;/div&gt;&lt;div&gt;+ addNovel(nvl:Novel, src:Souce)&lt;/div&gt;&lt;div&gt;+ removeNovel(nvl:Novel,&amp;nbsp;&lt;/div&gt;, src:Souce)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="2ZDiNAuSC-FLORGVPn16-9" vertex="1">
+        <mxCell id="2ZDiNAuSC-FLORGVPn16-12" value="+ Library(path:string): void&lt;div&gt;+ updatePathSource(src: string): void&lt;/div&gt;&lt;div&gt;+ loadNovels(): void&lt;/div&gt;&lt;div&gt;+ addNovel(nvl:Novel):void&lt;/div&gt;&lt;div&gt;+ removeNovel(novelId:number&lt;span style=&quot;background-color: initial;&quot;&gt;):void&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;+ saveNewsAddNovels():void&lt;/span&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="2ZDiNAuSC-FLORGVPn16-9" vertex="1">
           <mxGeometry y="78" width="240" height="112" as="geometry" />
-        </mxCell>
-        <mxCell id="JUxxIVEcW9c0OcqZ1ujC-5" value="Source" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="690" y="380" width="200" height="150" as="geometry" />
-        </mxCell>
-        <mxCell id="JUxxIVEcW9c0OcqZ1ujC-6" value="- name: string&lt;br&gt;- url: string&lt;br&gt;- novels: List&amp;lt;Novel&amp;gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="JUxxIVEcW9c0OcqZ1ujC-5" vertex="1">
-          <mxGeometry y="26" width="200" height="54" as="geometry" />
-        </mxCell>
-        <mxCell id="JUxxIVEcW9c0OcqZ1ujC-7" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="JUxxIVEcW9c0OcqZ1ujC-5" vertex="1">
-          <mxGeometry y="80" width="200" height="8" as="geometry" />
-        </mxCell>
-        <mxCell id="JUxxIVEcW9c0OcqZ1ujC-8" value="+ addNovel(novel:Novel): void&lt;br&gt;+ removeNovel(novel:Novel): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="JUxxIVEcW9c0OcqZ1ujC-5" vertex="1">
-          <mxGeometry y="88" width="200" height="62" as="geometry" />
-        </mxCell>
-        <mxCell id="JUxxIVEcW9c0OcqZ1ujC-9" value="" style="endArrow=diamondThin;endFill=0;endSize=24;html=1;rounded=0;exitX=-0.014;exitY=0.128;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="JUxxIVEcW9c0OcqZ1ujC-5" target="2ZDiNAuSC-FLORGVPn16-9" edge="1">
-          <mxGeometry width="160" relative="1" as="geometry">
-            <mxPoint x="647.44" y="316.08400000000006" as="sourcePoint" />
-            <mxPoint x="630" y="444" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="JUxxIVEcW9c0OcqZ1ujC-10" value="" style="endArrow=diamondThin;endFill=0;endSize=24;html=1;rounded=0;entryX=0.491;entryY=-0.042;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="2ZDiNAuSC-FLORGVPn16-1" target="JUxxIVEcW9c0OcqZ1ujC-5" edge="1">
-          <mxGeometry width="160" relative="1" as="geometry">
-            <mxPoint x="831" y="369" as="sourcePoint" />
-            <mxPoint x="764" y="320" as="targetPoint" />
-          </mxGeometry>
         </mxCell>
         <mxCell id="JUxxIVEcW9c0OcqZ1ujC-11" value="" style="endArrow=diamondThin;endFill=0;endSize=24;html=1;rounded=0;" parent="1" source="2ZDiNAuSC-FLORGVPn16-5" target="2ZDiNAuSC-FLORGVPn16-1" edge="1">
           <mxGeometry width="160" relative="1" as="geometry">
@@ -70,20 +34,53 @@
             <mxPoint x="620" y="154" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="E_CsgDJoaUjD0CU0wuPf-1" value="*" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
-          <mxGeometry x="530" y="178" width="30" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="E_CsgDJoaUjD0CU0wuPf-2" value="*" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
-          <mxGeometry x="660" y="370" width="30" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="E_CsgDJoaUjD0CU0wuPf-3" value="*" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
-          <mxGeometry x="740" y="280" width="30" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="E_CsgDJoaUjD0CU0wuPf-5" value="" style="endArrow=open;endFill=1;endSize=12;html=1;rounded=0;" edge="1" parent="1" source="2ZDiNAuSC-FLORGVPn16-9" target="2ZDiNAuSC-FLORGVPn16-1">
+        <mxCell id="E_CsgDJoaUjD0CU0wuPf-5" value="" style="endArrow=open;endFill=1;endSize=12;html=1;rounded=0;" parent="1" source="2ZDiNAuSC-FLORGVPn16-9" target="2ZDiNAuSC-FLORGVPn16-1" edge="1">
           <mxGeometry width="160" relative="1" as="geometry">
             <mxPoint x="530" y="310" as="sourcePoint" />
             <mxPoint x="690" y="310" as="targetPoint" />
           </mxGeometry>
+        </mxCell>
+        <mxCell id="HYPKdu-ar42oTKQdg_sy-3" value="" style="group" parent="1" vertex="1" connectable="0">
+          <mxGeometry x="669" y="40" width="190" height="134" as="geometry" />
+        </mxCell>
+        <mxCell id="2ZDiNAuSC-FLORGVPn16-5" value="Chapter" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="HYPKdu-ar42oTKQdg_sy-3" vertex="1">
+          <mxGeometry x="30" width="160" height="134" as="geometry" />
+        </mxCell>
+        <mxCell id="2ZDiNAuSC-FLORGVPn16-6" value="- name: string&lt;br&gt;- content: string&lt;br&gt;- read: boolean&lt;br&gt;- updatedAt : date" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="2ZDiNAuSC-FLORGVPn16-5" vertex="1">
+          <mxGeometry y="26" width="160" height="74" as="geometry" />
+        </mxCell>
+        <mxCell id="2ZDiNAuSC-FLORGVPn16-7" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="2ZDiNAuSC-FLORGVPn16-5" vertex="1">
+          <mxGeometry y="100" width="160" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="2ZDiNAuSC-FLORGVPn16-8" value="+ isSaved(): boolean" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="2ZDiNAuSC-FLORGVPn16-5" vertex="1">
+          <mxGeometry y="108" width="160" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="HYPKdu-ar42oTKQdg_sy-1" value="*" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="HYPKdu-ar42oTKQdg_sy-3" vertex="1">
+          <mxGeometry y="50" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="HYPKdu-ar42oTKQdg_sy-14" value="Explorer" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="670" y="220" width="340" height="230" as="geometry" />
+        </mxCell>
+        <mxCell id="HYPKdu-ar42oTKQdg_sy-15" value="- apiPath: string" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="HYPKdu-ar42oTKQdg_sy-14" vertex="1">
+          <mxGeometry y="26" width="340" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="HYPKdu-ar42oTKQdg_sy-16" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="HYPKdu-ar42oTKQdg_sy-14" vertex="1">
+          <mxGeometry y="70" width="340" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="HYPKdu-ar42oTKQdg_sy-17" value="&lt;div&gt;+ searchWithName(keywords: string):&amp;nbsp;&lt;span style=&quot;background-color: initial;&quot;&gt;List &amp;lt;Novel&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;+ searchWithNameInSource(keywords: string,source:string):&amp;nbsp;&lt;span style=&quot;background-color: initial;&quot;&gt;List &amp;lt;Novel&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;+&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;searchWithAuthor&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;InSource&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;(&lt;/span&gt;keywords&lt;span style=&quot;background-color: initial;&quot;&gt;: string,source:string):&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;List &amp;lt;Novel&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;+&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;searchWithGenre&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;InSource&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;(&lt;/span&gt;keywords&lt;span style=&quot;background-color: initial;&quot;&gt;: string,source:string):&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;List &amp;lt;Novel&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;+ getChapterContent(novelName:string, chapterName:string, source:string):string&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="HYPKdu-ar42oTKQdg_sy-14" vertex="1">
+          <mxGeometry y="78" width="340" height="152" as="geometry" />
+        </mxCell>
+        <mxCell id="HYPKdu-ar42oTKQdg_sy-18" value="DownloadManager" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="600" y="540" width="340" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="HYPKdu-ar42oTKQdg_sy-19" value="- apiPath: string" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="HYPKdu-ar42oTKQdg_sy-18" vertex="1">
+          <mxGeometry y="26" width="340" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="HYPKdu-ar42oTKQdg_sy-20" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" parent="HYPKdu-ar42oTKQdg_sy-18" vertex="1">
+          <mxGeometry y="70" width="340" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="HYPKdu-ar42oTKQdg_sy-21" value="&lt;div&gt;+ dowloadChapter(novelName:string, chapterName:string, source:string): void&lt;/div&gt;&lt;div&gt;+&amp;nbsp;&lt;span style=&quot;background-color: initial;&quot;&gt;dowloadNovel(&lt;/span&gt;novelName:string, source:string&lt;span style=&quot;background-color: initial;&quot;&gt;): int&lt;/span&gt;&lt;/div&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" parent="HYPKdu-ar42oTKQdg_sy-18" vertex="1">
+          <mxGeometry y="78" width="340" height="72" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
